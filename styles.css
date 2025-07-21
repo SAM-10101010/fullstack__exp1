@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #34495e;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e1e8ed;
+    border-radius: 12px;
+    font-size: 16px;
+    background: #f8f9fa;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+input:valid {
+    border-color: #27ae60;
+    background: #f8fff9;
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: #e74c3c;
+    background: #fff8f8;
+}
+
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    background: linear-gradient(135deg, #bdc3c7, #95a5a6);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 8px;
+    display: none;
+    font-weight: 500;
+    padding: 5px 0;
+}
+
+.success-message {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 25px;
+    display: none;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+}
+
+.field-requirements {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Animation for form appearance */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-container {
+    animation: slideInUp 0.6s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 30px 25px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+        padding: 12px 16px;
+    }
+    
+    .submit-btn {
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+
+/* Floating label effect */
+.form-group {
+    position: relative;
+}
+
+.form-group input:focus + .floating-label,
+.form-group input:not(:placeholder-shown) + .floating-label {
+    top: -10px;
+    left: 15px;
+    font-size: 12px;
+    color: #667eea;
+    background: white;
+    padding: 0 5px;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a6fd8, #6a4190);
+}

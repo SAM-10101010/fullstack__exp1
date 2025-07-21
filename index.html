@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Student Registration Form</h1>
+        
+        <form id="studentForm" novalidate>
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    required 
+                    minlength="2" 
+                    maxlength="50"
+                    pattern="[A-Za-z\s]+"
+                    title="Name should contain only letters and spaces"
+                >
+                <div class="field-requirements">Must be 2-50 characters, letters and spaces only</div>
+                <div class="error-message" id="nameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required
+                    title="Please enter a valid email address"
+                >
+                <div class="field-requirements">Must be a valid email format (e.g., student@example.com)</div>
+                <div class="error-message" id="emailError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age *</label>
+                <input 
+                    type="number" 
+                    id="age" 
+                    name="age" 
+                    required 
+                    min="16" 
+                    max="100"
+                    title="Age must be between 16 and 100"
+                >
+                <div class="field-requirements">Must be between 16 and 100 years old</div>
+                <div class="error-message" id="ageError"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">Register Student</button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            <strong>Success!</strong> Student registration completed successfully.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
